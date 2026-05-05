@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import styles from './page.module.css';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -27,44 +28,51 @@ export default async function BlogPostPage({
         .toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
 
     return (
-        <main style={{ maxWidth: 820, margin: '0 auto', padding: '48px 24px 80px' }}>
-            {blog.tags?.length > 0 && (
-                <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
-                    {blog.tags.map((t: { _id: string; label: string }) => (
-                        <span key={t._id} style={{ background: 'rgba(47,99,196,0.1)', color: '#2f63c4', padding: '3px 12px', borderRadius: 99, fontSize: 12, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                            {t.label}
-                        </span>
-                    ))}
+        <main className={styles.page}>
+            <article className={styles.section}>
+                <div className={styles.container}>
+                    {blog.tags?.length > 0 && (
+                        <div className={styles.tags}>
+                            {blog.tags.map((t: { _id: string; label: string }) => (
+                                <span key={t._id} className={styles.tag}>
+                                    {t.label}
+                                </span>
+                            ))}
+                        </div>
+                    )}
+
+                    <h1 className={styles.title}>
+                        {blog.title}
+                    </h1>
+
+                    <div className={styles.meta}>
+                        <span className={styles.metaItem}>{date}</span>
+                        <div className={styles.dot} />
+                        <span className={styles.metaItem}>{blog.author}</span>
+                        <div className={styles.dot} />
+                        <span className={styles.metaItem}>{blog.readTime} min read</span>
+                    </div>
+
+                    {imgUrl && (
+                        <img
+                            src={imgUrl}
+                            alt={blog.title}
+                            className={styles.coverImage}
+                        />
+                    )}
+
+                    {blog.excerpt && (
+                        <p className={styles.excerpt}>
+                            {blog.excerpt}
+                        </p>
+                    )}
+
+                    <div
+                        className={styles.content}
+                        dangerouslySetInnerHTML={{ __html: blog.content || '<p>No content available.</p>' }}
+                    />
                 </div>
-            )}
-
-            <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 700, lineHeight: 1.2, marginBottom: 16 }}>
-                {blog.title}
-            </h1>
-
-            <div style={{ display: 'flex', gap: 16, fontSize: 13, color: '#888', marginBottom: 32, flexWrap: 'wrap' }}>
-                <span>{date}</span>
-                <span>·</span>
-                <span>{blog.author}</span>
-                <span>·</span>
-                <span>{blog.readTime} min read</span>
-            </div>
-
-            {imgUrl && (
-                <img src={imgUrl} alt={blog.title}
-                    style={{ width: '100%', maxHeight: 480, objectFit: 'cover', borderRadius: 10, marginBottom: 40 }} />
-            )}
-
-            {blog.excerpt && (
-                <p style={{ fontSize: 18, color: '#555', lineHeight: 1.7, marginBottom: 32, fontStyle: 'italic', borderLeft: '3px solid #2f63c4', paddingLeft: 20 }}>
-                    {blog.excerpt}
-                </p>
-            )}
-
-            <div
-                style={{ fontSize: 16, lineHeight: 1.8, color: '#333' }}
-                dangerouslySetInnerHTML={{ __html: blog.content || '<p>No content available.</p>' }}
-            />
+            </article>
         </main>
     );
 }

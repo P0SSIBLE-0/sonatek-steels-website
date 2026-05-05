@@ -18,7 +18,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.6) 40%, rgba(0, 0, 0, 0) 100%);
   z-index: 2;
 }
 
@@ -75,8 +75,9 @@
 
 @media (max-width: 768px) {
   .title {
-    font-size: 36px;
+    font-size: clamp(28px, 6vw, 36px);
   }
+
   .description {
     font-size: 16px;
   }

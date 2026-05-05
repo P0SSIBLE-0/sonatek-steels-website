@@ -1,0 +1,101 @@
+.wrapper {
+    background: #fff;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    position: sticky;
+    top: 100px;
+}
+
+.searchBox {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 15px;
+    color: #111;
+    transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--brand-blue, #2b3990);
+    box-shadow: 0 0 0 4px rgba(43, 57, 144, 0.05);
+}
+
+.searchIcon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+.filterSection {
+    margin-bottom: 32px;
+}
+
+.filterTitle {
+    font-family: var(--font-pilat-wide), sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.brandList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.brandBtn {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 10px 14px;
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.brandBtn:hover {
+    background: #f3f4f6;
+    color: #111;
+}
+
+.brandBtn.active {
+    background: rgba(43, 57, 144, 0.08);
+    color: var(--brand-blue, #2b3990);
+}
+
+.resultsCount {
+    padding-top: 24px;
+    border-top: 1px solid #f3f4f6;
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.resultsCount strong {
+    color: #111;
+}
+
+@media (max-width: 1024px) {
+    .wrapper {
+        position: static;
+        margin-bottom: 40px;
+    }
+}

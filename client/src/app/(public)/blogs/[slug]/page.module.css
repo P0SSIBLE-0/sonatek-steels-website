@@ -1,0 +1,131 @@
+.page {
+    width: 100%;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.tags {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.tag {
+    background: rgba(47, 99, 196, 0.1);
+    color: #2f63c4;
+    padding: 6px 16px;
+    border-radius: 99px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: var(--font-pilat-wide), sans-serif;
+}
+
+.title {
+    font-family: var(--font-pilat-wide), sans-serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #060c1a;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    font-family: var(--font-pilat-narrow), sans-serif;
+}
+
+.metaItem {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: #d1d5db;
+    border-radius: 50%;
+}
+
+.coverImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 60px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.excerpt {
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: clamp(18px, 2vw, 24px);
+    color: #374151;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    font-style: italic;
+    border-left: 4px solid #2f63c4;
+    padding-left: 32px;
+}
+
+.content {
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #1f2937;
+}
+
+.content p {
+    margin-bottom: 24px;
+}
+
+.content h2 {
+    font-family: var(--font-pilat-wide), sans-serif;
+    font-size: 32px;
+    color: #060c1a;
+    margin: 48px 0 24px;
+}
+
+.content h3 {
+    font-family: var(--font-pilat-wide), sans-serif;
+    font-size: 24px;
+    color: #060c1a;
+    margin: 32px 0 16px;
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+    .coverImage {
+        margin-bottom: 40px;
+        border-radius: 12px;
+    }
+
+    .excerpt {
+        padding-left: 20px;
+    }
+}

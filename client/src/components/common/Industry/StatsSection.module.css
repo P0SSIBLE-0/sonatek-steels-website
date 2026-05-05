@@ -68,7 +68,7 @@
 /* Sub */
 .sub {
     font-size: clamp(1rem, 1.5vw, 1.125rem);
-    color: #444444;
+    color: #f3f2f2;
     line-height: 1.6;
     max-width: 680px;
     margin: 0 auto 1.5rem;
@@ -99,7 +99,8 @@
 
 .statsRow {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjusted for industry data (3 items) */
+    grid-template-columns: repeat(3, 1fr);
+    /* Adjusted for industry data (3 items) */
     width: 100%;
     position: relative;
     opacity: 0;
@@ -229,7 +230,8 @@
     .statItem:last-child .statContent {
         border: none;
     }
-    .statItem:last-child{
+
+    .statItem:last-child {
         border: none;
         grid-column: span 2;
         justify-self: center;
@@ -291,7 +293,8 @@
 }
 
 .section[data-theme="light"] .label {
-    color: #2b3990; /* Brand blue */
+    color: #2b3990;
+    /* Brand blue */
 }
 
 .section[data-theme="light"] .sub {

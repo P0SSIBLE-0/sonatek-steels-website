@@ -81,7 +81,8 @@
 
 .iconWrap {
   margin-bottom: 32px;
-  color: #2b3990; /* Brand blue */
+  color: #2b3990;
+  /* Brand blue */
   display: flex;
   align-items: center;
   justify-content: center;

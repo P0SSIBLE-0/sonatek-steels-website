@@ -11,11 +11,12 @@ interface NewsCardProps {
 }
 
 export default function NewsCard({ date, title, excerpt, imageUrl, link }: NewsCardProps) {
+  const isLocalImage = !imageUrl.startsWith('https');
   return (
     <article className={styles.card}>
       <a href={link} className={styles.imageLink}>
         <div className={styles.imageWrap}>
-          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} />
+          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 33vw" className={styles.image} unoptimized={isLocalImage} />
         </div>
       </a>
       <div className={styles.content}>

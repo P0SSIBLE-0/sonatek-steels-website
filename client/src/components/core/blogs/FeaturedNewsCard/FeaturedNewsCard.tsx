@@ -12,11 +12,12 @@ interface FeaturedNewsCardProps {
 }
 
 export default function FeaturedNewsCard({ date, title, excerpt, imageUrl, link, isReversed = false }: FeaturedNewsCardProps) {
+  const isLocalImage = !imageUrl.startsWith('https');
   return (
     <article className={`${styles.card} ${isReversed ? styles.reversed : ''}`}>
       <a href={link} className={styles.imageLink}>
         <div className={styles.imageWrap}>
-          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 60vw" className={styles.image} />
+          <Image src={imageUrl} alt={title} fill sizes="(max-width: 768px) 100vw, 60vw" className={styles.image} unoptimized={isLocalImage} />
         </div>
       </a>
       <div className={styles.content}>
