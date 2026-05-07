@@ -56,44 +56,39 @@
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/products/cr-coils</loc>
+    <loc>https://sonateksteels.com/products</loc>
     <lastmod>2026-05-02</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/products/cr-sheets</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://sonateksteels.com/steel-procurement</loc>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/products/hr-coils</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://sonateksteels.com/custom-steel-processing</loc>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/products/hr-sheets</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://sonateksteels.com/infrastructure-industrial-project</loc>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/products/chequered-plates</loc>
-    <lastmod>2026-05-02</lastmod>
+    <loc>https://sonateksteels.com/technical-steel-selection</loc>
+    <lastmod>2026-05-06</lastmod>
     <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/services/processing</loc>
-    <lastmod>2026-05-02</lastmod>
-    <priority>0.50</priority>
+    <loc>https://sonateksteels.com/supply-chain</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.60</priority>
   </url>
   <url>
-    <loc>https://sonateksteels.com/services/distribution</loc>
-    <lastmod>2026-05-02</lastmod>
-    <priority>0.50</priority>
-  </url>
-  <url>
-    <loc>https://sonateksteels.com/services/technical</loc>
-    <lastmod>2026-05-02</lastmod>
-    <priority>0.50</priority>
+    <loc>https://sonateksteels.com/freight-forwarding</loc>
+    <lastmod>2026-05-06</lastmod>
+    <priority>0.60</priority>
   </url>
   <url>
     <loc>https://sonateksteels.com/terms-conditions</loc>

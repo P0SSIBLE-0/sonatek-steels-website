@@ -1,4 +1,3 @@
-
 :root {
   --brand-blue: #021450;
   --brand-blue-dark: #021450;
@@ -29,16 +28,33 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6,
-.title, [class*="Title"], [class*="title"],
-.headline, [class*="Headline"], [class*="headline"],
-.heading, [class*="Heading"], [class*="heading"] {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title,
+[class*="Title"],
+[class*="title"],
+.headline,
+[class*="Headline"],
+[class*="headline"],
+.heading,
+[class*="Heading"],
+[class*="heading"] {
   font-family: var(--font-pilat-wide), "Barlow", sans-serif !important;
 }
 
-p, span, div,
-.desc, [class*="Desc"], [class*="desc"],
-.sub, [class*="Sub"], [class*="sub"] {
+p,
+span,
+div,
+.desc,
+[class*="Desc"],
+[class*="desc"],
+.sub,
+[class*="Sub"],
+[class*="sub"] {
   font-family: var(--font-pilat-narrow), "Barlow", sans-serif;
 }
 

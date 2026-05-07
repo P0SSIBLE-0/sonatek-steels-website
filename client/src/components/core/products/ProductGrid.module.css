@@ -1,0 +1,70 @@
+.layout {
+    display: grid;
+    grid-template-columns: 320px fr;
+    gap: 60px;
+}
+
+.content {
+    min-width: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.noResults {
+    text-align: center;
+    padding: 80px 40px;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 2px dashed #e5e7eb;
+}
+
+.noResults h3 {
+    font-family: var(--font-pilat-wide), sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.noResults p {
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+.resetBtn {
+    background: var(--brand-blue, #2b3990);
+    color: #fff;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-family: var(--font-pilat-narrow), sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.resetBtn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+    .layout {
+        gap: 40px;
+    }
+}
+
+
+@media (max-width: 678px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

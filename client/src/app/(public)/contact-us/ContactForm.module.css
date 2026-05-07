@@ -78,7 +78,9 @@
   margin-left: 4px;
 }
 
-.input, .textarea, .select {
+.input,
+.textarea,
+.select {
   padding: 14px 16px;
   border: 1px solid #e5e7eb;
   border-radius: 4px;
@@ -88,13 +90,17 @@
   width: 100%;
 }
 
-.input:focus, .textarea:focus, .select:focus {
+.input:focus,
+.textarea:focus,
+.select:focus {
   outline: none;
   border-color: var(--brand-blue);
   box-shadow: 0 0 0 3px rgba(2, 20, 80, 0.1);
 }
 
-.input.error, .textarea.error, .select.error {
+.input.error,
+.textarea.error,
+.select.error {
   border-color: #e11d48;
 }
 
@@ -229,7 +235,7 @@
   }
 
   .headline {
-    font-size: 48px;
+    font-size: 38px;
   }
 }
 
@@ -274,4 +280,3 @@
   width: 40px;
   height: 40px;
 }
-

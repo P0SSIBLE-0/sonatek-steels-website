@@ -111,27 +111,21 @@ const NAV_DATA = [
     hasMegaMenu: true,
     featured: [
       {
-        img: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'See how we deliver for our customers.',
-        cta: 'Case Studies',
-        href: '/case-studies/logistics',
-      },
-      {
-        img: 'https://images.unsplash.com/photo-1770027218173-45e512200cd0?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-        title: 'Exploring new horizons in logistics.',
+        img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
+        title: 'Certified sourcing and technical support.',
         cta: 'Learn More',
-        href: '/about/innovation',
+        href: '/steel-procurement',
       },
     ],
     sections: [
       {
         title: 'FLAT STEEL PRODUCTS',
         links: [
-          { label: 'Cold Rolled (CR) Coils', href: '/products/cr-coils' },
-          { label: 'CR Sheets', href: '/products/cr-sheets' },
-          { label: 'Hot Rolled (HR) Coils', href: '/products/hr-coils' },
-          { label: 'HR Sheets/Plates', href: '/products/hr-sheets' },
-          { label: 'Chequered Plates', href: '/products/chequered-plates' },
+          { label: 'Cold Rolled (CR) Coils', href: '/products' },
+          { label: 'CR Sheets', href: '/products' },
+          { label: 'Hot Rolled (HR) Coils', href: '/products' },
+          { label: 'HR Sheets/Plates', href: '/products' },
+          { label: 'Chequered Plates', href: '/products' },
         ],
       },
       {
@@ -146,22 +140,29 @@ const NAV_DATA = [
         ],
       },
       {
-        title: 'PORTS & TERMINALS',
+        title: 'SOLUTIONS',
         links: [
-          { label: 'Our Port Services', href: '/services/port-services' },
-          { label: 'Our Port Network', href: '/services/port-network' },
-          { label: 'Port Technology & Innovation', href: '/services/port-technology' },
+          { label: 'Steel Procurement', href: '/steel-procurement' },
+          { label: 'Custom Steel Processing', href: '/custom-steel-processing' },
+          { label: 'Infrastructure & Industrial Project', href: '/infrastructure-industrial-project' },
+          { label: 'Technical Steel Selection', href: '/technical-steel-selection' },
+          { label: 'Supply Chain Solutions', href: '/supply-chain' },
+          { label: 'Freight Forwarding Services', href: '/freight-forwarding' },
         ],
       },
       {
         title: 'SERVICES',
         links: [
-          { label: 'Custom Processing', href: '/services/processing' },
-          { label: 'Distribution', href: '/services/distribution' },
-          { label: 'Technical Assistance', href: '/services/technical' },
+          { label: 'Custom Processing', href: '/custom-steel-processing' },
+          { label: 'Distribution Support', href: '/supply-chain' },
+          { label: 'Technical Assistance', href: '/technical-steel-selection' },
         ],
       },
     ],
+  },
+  {
+    label: "Products",
+    href: "/products"
   },
   {
     label: "About Us",
@@ -180,10 +181,20 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   const isActive = (item: any) => {
+    // Direct match for the item itself
     if (item.href !== '#' && pathname === item.href) return true;
+
+    // Match for sub-links in mega menu
     if (item.sections) {
-      return item.sections.some((section: any) => 
-        section.links.some((link: any) => pathname === link.href)
+      return item.sections.some((section: any) =>
+        section.links.some((link: any) => {
+          if (pathname !== link.href) return false;
+          const isPrimaryTopLevelMatch = NAV_DATA.some(navItem =>
+            navItem !== item && navItem.href === pathname
+          );
+
+          return !isPrimaryTopLevelMatch;
+        })
       );
     }
     return false;
@@ -284,9 +295,8 @@ export default function Navbar() {
               item.hasMegaMenu ? (
                 <button
                   key={item.label}
-                  className={`${styles.navLink} ${
-                    activeMenu === item.label || isActive(item) ? styles.active : ''
-                  }`}
+                  className={`${styles.navLink} ${activeMenu === item.label || isActive(item) ? styles.active : ''
+                    }`}
                   onClick={() =>
                     setActiveMenu(activeMenu === item.label ? null : item.label)
                   }
@@ -294,9 +304,9 @@ export default function Navbar() {
                   {item.label}
                 </button>
               ) : (
-                <a 
-                  key={item.label} 
-                  href={item.href} 
+                <a
+                  key={item.label}
+                  href={item.href}
                   className={`${styles.navLink} ${isActive(item) ? styles.active : ''}`}
                 >
                   {item.label}
@@ -356,9 +366,8 @@ export default function Navbar() {
                 item.hasMegaMenu ? (
                   <React.Fragment key={item.label}>
                     <button
-                      className={`${styles.mobileNavLink} ${
-                        activeMobileMenu === item.label || isActive(item) ? styles.active : ''
-                      }`}
+                      className={`${styles.mobileNavLink} ${activeMobileMenu === item.label || isActive(item) ? styles.active : ''
+                        }`}
                       onClick={() =>
                         setActiveMobileMenu(
                           activeMobileMenu === item.label ? null : item.label
@@ -367,9 +376,8 @@ export default function Navbar() {
                     >
                       {item.label}
                       <ChevronDownIcon
-                        className={`${styles.chevron} ${
-                          activeMobileMenu === item.label ? styles.rotated : ''
-                        }`}
+                        className={`${styles.chevron} ${activeMobileMenu === item.label ? styles.rotated : ''
+                          }`}
                       />
                     </button>
 

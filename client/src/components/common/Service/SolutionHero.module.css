@@ -1,0 +1,160 @@
+.hero {
+  position: relative;
+  background-color: #ffffff;
+  padding-top: 60px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.content {
+  flex: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.crumb {
+  font-family: var(--font-pilat-narrow), sans-serif;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.crumb:hover {
+  text-decoration: underline;
+}
+
+.separator {
+  color: #999;
+  font-size: 14px;
+}
+
+.current {
+  color: #888;
+}
+
+.title {
+  font-family: var(--font-pilat-wide), sans-serif;
+  font-size: clamp(40px, 5vw, 50px);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.description {
+  font-family: var(--font-pilat-narrow), sans-serif;
+  font-size: clamp(16px, 1.2vw, 22px);
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 40px;
+  max-width: 550px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #3f4296;
+  /* Darker blue/purple from image */
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: var(--font-pilat-wide), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #2b2e7a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(63, 66, 150, 0.2);
+}
+
+.imageWrap {
+  flex: 1.2;
+  position: relative;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageWrap.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.imageInner {
+  position: relative;
+  aspect-ratio: 4 / 4;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 0 30px;
+    gap: 50px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .breadcrumb {
+    justify-content: center;
+  }
+
+  .title {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 0;
+  }
+
+  .container {
+    gap: 40px;
+  }
+}

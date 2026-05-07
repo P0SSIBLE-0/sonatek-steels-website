@@ -25,7 +25,7 @@
 .label {
   font-size: 14px;
   font-weight: 600;
-  color: #c4a484;
+  color: var(--brand-blue);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 12px;
@@ -126,7 +126,12 @@
   .grid {
     grid-template-columns: 1fr;
   }
+
   .container {
     padding: 0 20px;
+  }
+
+  .container .image {
+    /* display: none; */
   }
 }

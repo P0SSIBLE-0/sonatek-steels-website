@@ -49,7 +49,12 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.75);
+    font-family: var(--font-pilat-wide);
     margin: 0 0 1rem 0;
+}
+
+.label p {
+    font-family: var(--font-pilat-wide), "Barlow", sans-serif !important;
 }
 
 /* Big headline */
@@ -61,7 +66,7 @@
     letter-spacing: -0.01em;
     line-height: 1.05;
     margin: 0 0 1.25rem 0;
-    font-family: "Barlow", sans-serif;
+    font-family: var(--font-pilat-wide), "Barlow", sans-serif !important;
     text-align: center;
 }
 

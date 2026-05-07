@@ -5,12 +5,24 @@ import Logo from "@/assets/images/logo.png";
 
 const COLUMNS = [
     {
-        heading: "Buy Online",
+        heading: "Solutions",
         links: [
-            { label: "Hot Rolled Sheets", href: "/hrsheets" },
-            { label: "Hot Rolled Coils", href: "/hrcoils" },
-            { label: "Cold Rolled Sheets", href: "/crsheets" },
-            { label: "Cold Rolled Coils", href: "/crcoils" },
+            { label: "End to End Services", href: "/supply-chain" },
+            { label: "Freight Forwarding", href: "/freight-forwarding" },
+            { label: "Infrastructure and Industrial Projects", href: "/infrastructure-industrial-project" },
+            { label: "Steel Procurement", href: "/steel-procurement" },
+            { label: "Custom Steel Processing", href: "/custom-steel-processing" },
+        ],
+    },
+    {
+        heading: "Products",
+        links: [
+            { label: "Hot Rolled Sheets", href: "/products/hr-sheets" },
+            { label: "Hot Rolled Coils", href: "/products/hr-coils" },
+            { label: "Cold Rolled Sheets", href: "/products/cr-sheets" },
+            { label: "Cold Rolled Coils", href: "/products/cr-coils" },
+            { label: "Chequered Plates", href: "/products/chequered-plates" },
+            { label: "Heavy Plates", href: "/products/heavy-plates" },
         ],
     },
     {

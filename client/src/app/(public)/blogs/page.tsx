@@ -2,10 +2,11 @@ import styles from './page.module.css';
 import NewsCard from '@/components/core/blogs/NewsCard/NewsCard';
 import FeaturedNewsCard from '@/components/core/blogs/FeaturedNewsCard/FeaturedNewsCard';
 import FloatingTagsDynamic from './FloatingTagsDynamic';
+import { tagsData } from './tags-data';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
-interface Tag  { _id: string; label: string; slug: string; }
+interface Tag { _id: string; label: string; slug: string; }
 interface Blog {
     _id: string; title: string; slug: string; excerpt: string;
     coverImage?: string; publishedAt?: string; createdAt: string;
@@ -36,18 +37,19 @@ async function fetchTags(): Promise<Tag[]> {
 }
 
 const FALLBACK: Blog[] = [
-    { _id:'1', title:'BASICALLY STEEL', slug:'basically-steel', excerpt:'Steel is an alloy primarily composed of iron and a small percentage of carbon, which enhances its strength and fracture resistance.', coverImage:'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80', publishedAt:'2025-05-10', createdAt:'2025-05-10', isFeatured:true,  readTime:3, tags:[] },
-    { _id:'2', title:'TEMPERATURE',     slug:'temperature',     excerpt:'Hot rolling primarily involves deforming the slab/bloom at high temperature & roll pressure.',                                                 coverImage:'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=80', publishedAt:'2025-05-08', createdAt:'2025-05-08', isFeatured:false, readTime:4, tags:[] },
-    { _id:'3', title:'SMOOTH SURFACE',  slug:'smooth-surface',  excerpt:'Cold rolling is performed to produce sheets & strips with smooth surfaces, having a better surface finish.',                                      coverImage:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', publishedAt:'2025-05-05', createdAt:'2025-05-05', isFeatured:false, readTime:3, tags:[] },
-    { _id:'4', title:'NEW MILESTONE',   slug:'milestone',       excerpt:'Pioneering infrastructure development in Northern India transforms local and global steel trade capacities.',                                         coverImage:'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80',publishedAt:'2025-05-01', createdAt:'2025-05-01', isFeatured:true,  readTime:5, tags:[] },
+    { _id: '1', title: 'BASICALLY STEEL', slug: 'basically-steel', excerpt: 'Steel is an alloy primarily composed of iron and a small percentage of carbon, which enhances its strength and fracture resistance.', coverImage: 'https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=800&q=80', publishedAt: '2025-05-10', createdAt: '2025-05-10', isFeatured: true, readTime: 3, tags: [] },
+    { _id: '2', title: 'TEMPERATURE', slug: 'temperature', excerpt: 'Hot rolling primarily involves deforming the slab/bloom at high temperature & roll pressure.', coverImage: 'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=800&q=80', publishedAt: '2025-05-08', createdAt: '2025-05-08', isFeatured: false, readTime: 4, tags: [] },
+    { _id: '3', title: 'SMOOTH SURFACE', slug: 'smooth-surface', excerpt: 'Cold rolling is performed to produce sheets & strips with smooth surfaces, having a better surface finish.', coverImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80', publishedAt: '2025-05-05', createdAt: '2025-05-05', isFeatured: false, readTime: 3, tags: [] },
+    { _id: '4', title: 'NEW MILESTONE', slug: 'milestone', excerpt: 'Pioneering infrastructure development in Northern India transforms local and global steel trade capacities.', coverImage: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&q=80', publishedAt: '2025-05-01', createdAt: '2025-05-01', isFeatured: true, readTime: 5, tags: [] },
 ];
 
 export default async function BlogsPage() {
     const [blogs, tags] = await Promise.all([fetchBlogs(), fetchTags()]);
     const list = blogs.length > 0 ? blogs : FALLBACK;
+    const finalTags = tags.length > 0 ? tags : tagsData.map(t => ({ _id: String(t.id), label: t.label, slug: t.label.toLowerCase().replace(/ /g, '-') }));
 
     const featured = list.filter((b) => b.isFeatured);
-    const regular  = list.filter((b) => !b.isFeatured);
+    const regular = list.filter((b) => !b.isFeatured);
     const f1 = featured[0] ?? list[0];
     const g1 = regular.slice(0, 2);
     const f2 = featured[1] ?? regular[2];
@@ -80,7 +82,7 @@ export default async function BlogsPage() {
                         )}
                     </div>
                     <aside className={styles.sidebar}>
-                        <FloatingTagsDynamic tags={tags} />
+                        <FloatingTagsDynamic tags={finalTags} />
                     </aside>
                 </div>
             </div>

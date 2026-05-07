@@ -82,6 +82,10 @@
   color: #1a1a1a;
   margin-bottom: 16px;
   text-transform: uppercase;
+  min-height: 54px; /* Accommodate up to 2 lines for consistent alignment */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .itemDescription {

@@ -7,7 +7,7 @@ import LatestNews from "@/components/core/home/LatestNews";
 import CTABanner from "@/components/core/home/CTABanner";
 import Testimonials from "@/components/core/home/Testimonials";
 import Services from "@/components/core/home/Services";
-import WhyDPWorld from "@/components/core/home/WhyDPWorld";
+import WhySonatek from "@/components/core/home/WhySonatek";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -41,7 +41,7 @@ export default async function Home() {
                 videoUrl={hc?.hero?.videoUrl}
                 posterUrl={hc?.hero?.posterUrl}
             />
-            <WhyDPWorld />
+            <WhySonatek />
             <Impact
                 label={hc?.impact?.label}
                 headline={hc?.impact?.headline}

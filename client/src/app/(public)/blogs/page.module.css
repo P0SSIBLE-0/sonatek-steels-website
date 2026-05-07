@@ -1,120 +1,129 @@
-.page {
+/* ================================
+   BLOG LISTING PAGE
+   ================================ */
+
+.main {
   width: 100%;
   background-color: #fff;
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem 0;
+  padding: 6rem 40px 5rem;
 }
 
-.header {
-  padding: clamp(60px, 8vh, 80px) 0 clamp(40px, 5vh, 60px);
-}
-
-.breadcrumb {
-  font-family: var(--font-pilat-narrow), sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  color: #666;
-  margin-bottom: 24px;
-}
-
-.breadcrumb a {
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.breadcrumb a:hover {
-  color: #1a365d;
-}
-
-.breadcrumb span {
-  margin: 0 8px;
-  color: #ccc;
-}
-
-.title {
+/* ── Page title ── */
+.pageTitle {
   font-family: var(--font-pilat-wide), sans-serif;
-  font-size: clamp(40px, 5vw, 64px);
+  font-size: clamp(36px, 5vw, 40px);
   font-weight: 800;
   line-height: 1;
   text-transform: uppercase;
   color: #000;
-  margin-bottom: 24px;
+  margin-bottom: 56px;
 }
 
-.description {
-  font-family: var(--font-pilat-narrow), sans-serif;
-  font-size: clamp(16px, 1.2vw, 18px);
-  line-height: 1.6;
-  color: #333;
-  max-width: 600px;
-}
-
-.contactLink {
-  color: #1a365d;
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s ease;
-}
-
-.contactLink:hover {
-  opacity: 0.8;
-}
-
-.contentLayout {
+/* ── Two-column layout: content + sidebar ── */
+.layout {
   display: flex;
-  gap: 40px;
+  gap: 56px;
   align-items: flex-start;
 }
 
-.newsColumn {
+/* ── Left content column ── */
+.content {
   flex: 1;
   min-width: 0;
 }
 
+/* ── Sidebar ── */
 .sidebar {
-  width: 300px;
+  width: 280px;
+  flex-shrink: 0;
   position: sticky;
-  top: 120px; /* Adjust based on your navbar height */
-  z-index: 10;
+  top: 120px;
 }
 
-.newsGrid {
+/* ── 2-col card grid (used for regular cards) ── */
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns now that we have a sidebar */
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  margin-bottom: clamp(60px, 8vw, 100px);
+  margin-bottom: clamp(56px, 8vw, 96px);
 }
 
-@media (max-width: 768px) {
-  .contentLayout {
-    flex-direction: column-reverse;
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+/* Tablet — sidebar goes below, sidebar width auto */
+@media (max-width: 1100px) {
+  .container {
+    padding: 5rem 32px 4rem;
+  }
+
+  .sidebar {
+    width: 240px;
+  }
+
+  .layout {
     gap: 40px;
   }
-  
-  .sidebar {
-    width: 100%;
-    position: static;
-  }
 }
 
-@media (max-width: 1024px) {
-  .newsGrid {
+@media (max-width: 900px) {
+  .layout {
+    flex-direction: column-reverse;
+    /* Put tags on top of content */
+    gap: 32px;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: sticky;
+    top: 60px;
+    /* Sticky on mobile too */
+    z-index: 50;
+  }
+
+  .grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
+  }
+
+  .container {
+    padding: 4rem 24px 3rem;
   }
 }
 
 @media (max-width: 640px) {
-  .newsGrid {
+  .grid {
     grid-template-columns: 1fr;
     gap: 48px;
   }
-  .container{
-    padding: 1rem;
+
+  .container {
+    padding: 4rem 20px 3rem;
+  }
+
+  .pageTitle {
+    font-size: clamp(28px, 8vw, 40px);
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 6.2rem 16px 2.5rem;
+  }
+
+  .pageTitle {
+    font-size: clamp(24px, 8vw, 32px);
+    margin-bottom: 12px;
+  }
+
+  .grid {
+    gap: 36px;
   }
 }

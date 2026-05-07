@@ -12,7 +12,7 @@
     display: flex;
     align-items: flex-end;
     /* content sits at the bottom */
-    font-family: "Barlow", "DM Sans", -apple-system, sans-serif;
+    font-family: var(--font-pilat-wide), "Barlow", sans-serif;
 }
 
 /* ── Video wrap ── */

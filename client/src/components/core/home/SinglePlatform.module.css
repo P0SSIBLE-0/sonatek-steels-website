@@ -38,6 +38,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #2a2a2a;
+    font-family: var(--font-pilat-wide), "Barlow", sans-serif;
     margin: 0 0 1.1rem 0;
 }
 

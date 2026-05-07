@@ -48,7 +48,7 @@ function ServiceCard({
                 <h3 className={styles.cardTitle}>{service.title}</h3>
                 <p className={styles.cardDescription}>{service.description}</p>
                 <Link href={service.href} className={styles.readMore}>
-                    Read More <MoveRight size={18} strokeWidth={1.5} />
+                    Explore <MoveRight size={18} strokeWidth={1.5} />
                 </Link>
             </div>
         </div>

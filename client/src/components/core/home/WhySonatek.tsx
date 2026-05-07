@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import styles from "./WhyDPWorld.module.css";
+import styles from "./WhySonatek.module.css";
 
-export default function WhyDPWorld() {
+export default function WhySonatek() {
     const [visible, setVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -32,9 +32,9 @@ export default function WhyDPWorld() {
 
                 {/* Body */}
                 <p className={styles.body}>
-                    As MOU Dealers of SAIL and leading stockists in Northern India, 
-                    we provide a comprehensive range of flat steel products tailored 
-                    to your industrial needs. From OEMs to corporate clients, we 
+                    As MOU Dealers of SAIL and leading stockists in Northern India,
+                    we provide a comprehensive range of flat steel products tailored
+                    to your industrial needs. From OEMs to corporate clients, we
                     deliver quality and excellence in every coil and sheet.
                 </p>
 

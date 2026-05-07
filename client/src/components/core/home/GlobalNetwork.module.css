@@ -8,7 +8,7 @@
     background: #ffffff;
     width: 100%;
     padding: 5.5rem 0 5rem;
-    font-family: "Barlow", "DM Sans", -apple-system, sans-serif;
+    font-family: var(--font-pilat-wide), "Barlow", "DM Sans", -apple-system, sans-serif;
     overflow: hidden;
 }
 
@@ -35,6 +35,7 @@
     text-transform: uppercase;
     color: #333333;
     margin: 0 0 0.85rem 0;
+    font-family: var(--font-pilat-wide), "Barlow", sans-serif;
 }
 
 .headline {

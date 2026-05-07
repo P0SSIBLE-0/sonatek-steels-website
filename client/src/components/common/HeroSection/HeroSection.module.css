@@ -19,7 +19,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
   z-index: 2;
 }
 
@@ -30,7 +30,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 24px;
-  bottom: -100px;
+  bottom: -110px;
 }
 
 .breadcrumb {
@@ -83,7 +83,14 @@
   .heroTitle {
     font-size: 40px;
   }
+
   .heroDesc {
     font-size: 16px;
   }
+
+  .hero {
+    height: 60vh;
+
+  }
+
 }
