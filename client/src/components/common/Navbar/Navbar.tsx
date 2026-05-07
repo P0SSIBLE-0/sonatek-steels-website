@@ -111,12 +111,6 @@ const NAV_DATA = [
     hasMegaMenu: true,
     featured: [
       {
-        img: 'https://images.unsplash.com/photo-1541888946425-d81bb19480c5?w=800&q=80',
-        title: 'Steel supply for industrial projects.',
-        cta: 'Explore Solution',
-        href: '/infrastructure-industrial-project',
-      },
-      {
         img: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
         title: 'Certified sourcing and technical support.',
         cta: 'Learn More',
@@ -187,10 +181,20 @@ export default function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
 
   const isActive = (item: any) => {
+    // Direct match for the item itself
     if (item.href !== '#' && pathname === item.href) return true;
+
+    // Match for sub-links in mega menu
     if (item.sections) {
       return item.sections.some((section: any) =>
-        section.links.some((link: any) => pathname === link.href)
+        section.links.some((link: any) => {
+          if (pathname !== link.href) return false;
+          const isPrimaryTopLevelMatch = NAV_DATA.some(navItem =>
+            navItem !== item && navItem.href === pathname
+          );
+
+          return !isPrimaryTopLevelMatch;
+        })
       );
     }
     return false;
